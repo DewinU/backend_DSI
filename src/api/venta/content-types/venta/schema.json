@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "ventas",
+  "info": {
+    "singularName": "venta",
+    "pluralName": "ventas",
+    "displayName": "Venta"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "total": {
+      "type": "decimal",
+      "required": false
+    },
+    "cancelada": {
+      "type": "boolean",
+      "required": true,
+      "default": false
+    },
+    "detalle_ventas": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::detalle-venta.detalle-venta",
+      "mappedBy": "venta"
+    }
+  }
+}
